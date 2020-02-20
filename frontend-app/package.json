@@ -8,6 +8,9 @@
       "version": "6.4.1"
     }
   },
+  "scripts": {
+    "dev": "tns run android --device a1b89436"
+  },
   "description": "NativeScript Application",
   "license": "SEE LICENSE IN <your-license-filename>",
   "repository": "<fill-your-repository-here>",
