@@ -1,3 +1,11 @@
+### GET STARTED
+
+run `sh install.sh` or `./install.sh` in root folder
+
+### Develop
+
+### EXTRA
+
 `npm run dev`
 will run ng serve to start development for angular and start nodejs typescript server concurrently,
 it will also build the project into server/dist whenever frontend/angular application is changed.

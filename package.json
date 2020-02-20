@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently  \"npm run frontend\"  \"npm run backend-https\" ",
+    "dev": "concurrently  \"npm run frontend\"  \"npm run backend\" ",
     "backend": "(cd backend-server && npm run dev)",
     "backend-https": "(cd backend-server && npm run https)",
-    "frontend": "(cd frontend-app && tns preview)",
+    "frontend": "(cd frontend-app && npm run dev)",
     "rm-android": "(cd frontend-app && tns platform remove android)",
     "add-android": "(cd frontend-app &&  tns platform add android)",
     "update": "(cd frontend-app && tns resources update)"
