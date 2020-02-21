@@ -1,0 +1,16 @@
+<form [formGroup]="loginFormGroup">
+  <mat-form-field>
+    <mat-label>Personnummer</mat-label>
+    <input
+      formControlName="personalNumber"
+      #input
+      appearance="fill"
+      matInput
+      placeholder="199608279015"
+      value="199608279015"
+    />
+  </mat-form-field>
+  <button [disabled]="!valid" type="submit" mat-raised-button (click)="login()">
+    Login
+  </button>
+</form>

@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import { TemplateRoutes } from "./routes/template.routes";
 import { TemplateController } from "./controllers/template.controller";
 import { MONGO_URL, PORT } from "./constants";
+import { BankIDController } from "./controllers/bank-id.controller";
 
 class App {
   public app: Application;
@@ -17,6 +18,7 @@ class App {
    */
   // public templateRoutes: TemplateRoutes = new TemplateRoutes();
   public templateController: TemplateController;
+  public bankIdController: BankIDController;
 
   private readonly mongoUrl: string = MONGO_URL;
   private readonly PORT = PORT;
@@ -25,6 +27,7 @@ class App {
     this.app = express();
     this.config();
     this.templateController = new TemplateController(this.app);
+    this.bankIdController = new BankIDController(this.app);
     this.mongoSetup();
   }
 
