@@ -3,6 +3,7 @@ import fs from "fs";
 import https from "https";
 import fetch from "node-fetch";
 import { resolve } from "path";
+import { User, IUser } from "../models/user.model";
 
 enum hintCodes {
   expiredTransaction = "expiredTransaction",
@@ -61,11 +62,34 @@ export class BankIDService {
   public async collect(request: Request, response: Response) {
     let orderRef = request.query.orderRef;
     let data = (await this.callCollect(orderRef)) as any;
-    response.json({ status: data.status, completionData: data.completionData });
+    let personalNumber = data.completionData.user.personalNumber;
+    let firstname = data.completionData.user.givenName;
+    let surnname = data.completionData.user.surname;
+    User.findOne({ personalNumber: personalNumber }, (error: Error, user) => {
+      if (error) {
+        const user = new User({
+          firstname: firstname,
+          surname: surnname,
+          personalNumber: personalNumber
+        });
+        user.save((error: Error, user: IUser) => {
+          response.json({
+            status: data.status,
+            completionData: data.completionData,
+            user: user
+          });
+        });
+      } else {
+        response.json({
+          status: data.status,
+          completionData: data.completionData,
+          user: user
+        });
+      }
+    });
   }
 
   private async callCollect(orderRef: string): Promise<any> {
-    console.log("orderRef!");
     let data: any = await fetch(`${this.baseUrl}/collect`, {
       method: "POST",
       body: JSON.stringify({
@@ -78,7 +102,6 @@ export class BankIDService {
     });
 
     data = await data.json();
-    console.log(data);
     if (data.hintCode) {
       if (
         data.hintCode !== hintCodes.expiredTransaction &&
@@ -94,7 +117,6 @@ export class BankIDService {
         return data;
       }
     } else {
-      console.log("return data", data);
       return data;
     }
   }

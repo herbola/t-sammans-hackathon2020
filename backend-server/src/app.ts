@@ -7,6 +7,8 @@ import { TemplateRoutes } from "./routes/template.routes";
 import { TemplateController } from "./controllers/template.controller";
 import { MONGO_URL, PORT } from "./constants";
 import { BankIDController } from "./controllers/bank-id.controller";
+import { ActivityController } from "./controllers/activity.controller";
+import { UserController } from "./controllers/user.controller";
 
 class App {
   public app: Application;
@@ -19,7 +21,8 @@ class App {
   // public templateRoutes: TemplateRoutes = new TemplateRoutes();
   public templateController: TemplateController;
   public bankIdController: BankIDController;
-
+  public userController: UserController;
+  public activityController: ActivityController;
   private readonly mongoUrl: string = MONGO_URL;
   private readonly PORT = PORT;
 
@@ -28,6 +31,9 @@ class App {
     this.config();
     this.templateController = new TemplateController(this.app);
     this.bankIdController = new BankIDController(this.app);
+    this.activityController = new ActivityController(this.app);
+    this.userController = new UserController(this.app);
+
     this.mongoSetup();
   }
 

@@ -1,3 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-size: contain;
+  background: url("./assets/image1.jpg") center center;
+}
+.opacity {
+  background-color: rgba(0, 0, 0, 0);
+}
+.center {
+  margin: 10px auto;
+  max-width: 500px;
+  margin-top: 50px;
+}
+
+.main-button {
+  min-width: 300px;
+  max-width: 95%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background-color: #a5075a;
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  font-weight: 100;
+}
+
+.mat-form-field .mat-form-field-flex {
+  background-color: rgba(165, 7, 90, 0.6);
+  border-top-right-radius: 25px;
+}
+
+.mat-form-field-label {
+  color: white !important;
+}
+.mat-form-field-underline {
+  background-color: white !important;
+}
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+}
+
+.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: white !important;
+}
+
+.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: white !important;
+}
+
+.mat-form-field-empty.mat-form-field-label {
+  color: white;
+}
+
+.mat-progress-bar-fill::after {
+  background-color: #a5075a;
+}
+
+.mat-progress-bar-buffer {
+  background: rgba(165, 7, 90, 0.6);
+}
+
+.mat-toolbar.example-toolbar.mat-primary.mat-toolbar-single-row {
+  background-color: #a5075a;
+}
+
+.activity-item {
+  min-width: 300px;
+  max-width: 95%;
+  border-radius: 15px;
+  padding: 0px;
+  background-color: white;
+  color: black;
+  margin-bottom: 5px;
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}

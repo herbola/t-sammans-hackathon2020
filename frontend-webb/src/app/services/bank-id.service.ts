@@ -11,20 +11,25 @@ export class BankIDService {
   constructor(private httpClient: HttpClient) {}
   public auth(
     personalNumber: string,
-    callback: (response: AuthResponse) => void
+    callback: (response: AuthResponse) => void,
+    error?: CallableFunction
   ) {
     this.httpClient
       .get<AuthResponse>(this.AUTH_URL, {
         params: new HttpParams().set("personalNumber", personalNumber)
       })
-      .subscribe(callback, error => console.error(error));
+      .subscribe(callback, error => error(error));
   }
 
-  public collect(orderRef: string, callback: (CollectResponse) => void) {
+  public collect(
+    orderRef: string,
+    callback: (CollectResponse) => void,
+    error?: CallableFunction
+  ) {
     this.httpClient
       .get<CollectResponse>(this.COLLECT_URL, {
         params: new HttpParams().set("orderRef", orderRef)
       })
-      .subscribe(callback, error => console.error(error));
+      .subscribe(callback, error => error(error));
   }
 }

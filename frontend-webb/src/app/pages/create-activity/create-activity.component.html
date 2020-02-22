@@ -1,0 +1,39 @@
+<div class="center" align="center">
+  <h2 style="color: white">Skapa aktivitet</h2>
+
+  <form [formGroup]="formGroup">
+    <mat-form-field appearance="fill">
+      <mat-label>Rubrik</mat-label>
+      <input formControlName="label" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Pris</mat-label>
+      <input formControlName="price" type="number" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input formControlName="address" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Beskrivning</mat-label>
+      <textarea formControlName="description" matInput></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Maximalt användare</mat-label>
+      <input formControlName="maxSpots" type="number" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Minimalt användare</mat-label>
+      <input formControlName="minSpots" type="number" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Datum</mat-label>
+      <input formControlName="date" matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button class="main-button" [disabled]="!valid" (click)="submit()">
+      Fortsätt
+    </button>
+  </form>
+</div>

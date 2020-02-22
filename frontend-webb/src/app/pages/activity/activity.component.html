@@ -1,0 +1,42 @@
+<div class="activity-item" *ngIf="activity" align="center">
+  <div (click)="toggleShowMore()">
+    <h6>{{ activity.label }}</h6>
+    <p>{{ placesLeft }} platser kvar ({{ activity.maxSpots }})</p>
+  </div>
+  <div [@dynamicHeight]="showMore ? 'open' : 'closed'">
+    <mat-label>{{ activity.address }}</mat-label>
+
+    <mat-label> {{ getDate() }} </mat-label>
+    <mat-label> {{ getTime() }} </mat-label>
+    <p>
+      {{ activity.description }}
+    </p>
+    <div class="actions">
+      <button class="main-button">
+        <mat-icon>location_on</mat-icon>Vägbeskrivning
+      </button>
+      <br />
+      <br />
+      <button class="main-button" (click)="showMembers()">
+        <mat-icon>people</mat-icon>Visa deltagare
+      </button>
+      <br />
+      <br />
+      <button
+        class="main-button"
+        (click)="addActivityToUser()"
+        *ngIf="!haveActivity; else hasActivity"
+      >
+        <mat-icon>calendar_today</mat-icon> Lägg till träff i kalendern
+      </button>
+      <ng-template #hasActivity>
+        <button class="main-button" (click)="removeActivityFromUser()">
+          <mat-icon>calendar_today</mat-icon>Ta bort från kalendern
+        </button>
+      </ng-template>
+
+      <br />
+      <br />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div align="center" style="margin-top: 20px;">
+  <button class="main-button" (click)="create()">Skapa en aktivitet</button>
+  <br />
+  <br />
+  <button class="main-button second-button">Sök eller bläddra aktiviter</button>
+</div>
+<div class="row activities" align="center">
+  <app-activity
+    style="margin: 0 auto;"
+    *ngFor="let activity of activities"
+    class="col activity"
+    [activity]="activity"
+  ></app-activity>
+</div>

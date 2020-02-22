@@ -1,16 +1,59 @@
-<form [formGroup]="loginFormGroup">
-  <mat-form-field>
-    <mat-label>Personnummer</mat-label>
-    <input
-      formControlName="personalNumber"
-      #input
-      appearance="fill"
-      matInput
-      placeholder="199608279015"
-      value="199608279015"
+<div class="ccc" align="center">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="106.96"
+    height="106.96"
+    viewBox="0 0 106.96 106.96"
+  >
+    <defs>
+      <style>
+        .a {
+          fill: rgba(0, 0, 0, 0);
+        }
+        .b {
+          fill: #fff;
+        }
+      </style>
+    </defs>
+    <path class="a" d="M0,0H106.96V106.96H0Z" />
+    <path
+      class="b"
+      d="M43.11,2A8.913,8.913,0,1,1,34.2,10.913,8.94,8.94,0,0,1,43.11,2ZM83.22,33.2H56.48V91.133H47.567V64.393H38.653v26.74H29.74V33.2H3V24.283H83.22Z"
+      transform="translate(10 6.913)"
     />
-  </mat-form-field>
-  <button [disabled]="!valid" type="submit" mat-raised-button (click)="login()">
-    Login
-  </button>
-</form>
+  </svg>
+  <br />
+  <mat-label class="label"> Sammans</mat-label>
+</div>
+<div class="cccc" align="center">
+  <form [formGroup]="loginFormGroup">
+    <mat-form-field appearance="fill" class="input-field">
+      <mat-label>Personnummer</mat-label>
+      <input
+        formControlName="personalNumber"
+        #input
+        appearance="fill"
+        matInput
+        placeholder="199608279015"
+        value="199608279015"
+        autocomplete="off"
+      />
+    </mat-form-field>
+
+    <button
+      *ngIf="!loading"
+      [disabled]="!valid"
+      type="submit"
+      class="main-button btn"
+      (click)="login()"
+    >
+      Login
+    </button>
+
+    <mat-progress-bar
+      *ngIf="loading"
+      mode="indeterminate"
+      value="40"
+    ></mat-progress-bar>
+  </form>
+</div>

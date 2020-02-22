@@ -10,8 +10,31 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ActivityComponent } from "./pages/activity/activity.component";
+import { AllActivitiesComponent } from "./pages/all-activities/all-activities.component";
+import { MatListModule } from "@angular/material/list";
+import { MatCardModule } from "@angular/material/card";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { CreateActivityComponent } from "./pages/create-activity/create-activity.component";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from "@angular/material/core";
+import { ProfileComponent } from "./pages/profile/profile.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { ShowMembersComponent } from "./pages/show-members/show-members";
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ActivityComponent,
+    AllActivitiesComponent,
+    ProfileComponent,
+    CreateActivityComponent,
+    HomeComponent,
+    ShowMembersComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,7 +45,15 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatListModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
