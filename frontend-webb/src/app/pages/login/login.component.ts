@@ -88,6 +88,7 @@ export class LoginComponent implements OnInit {
         this.bankIdService.collect(
           response.orderRef,
           (response: CollectResponse) => {
+            console.log(response.user);
             this.auth.setUser(response.user);
             this.router.navigate(["/activity"]);
             this.loading = false;

@@ -48,10 +48,7 @@ export class BankIDService {
     let orderRef;
     if (json.orderRef) orderRef = json.orderRef;
 
-    // if (json.errorCode !== undefined) {
-    //   console.log("error", json);
-    //   next();
-    // } else {
+
     response.json({
       message: "auth initiated, please open bankid to authenticate" + orderRef,
       orderRef: orderRef
@@ -65,14 +62,15 @@ export class BankIDService {
     let personalNumber = data.completionData.user.personalNumber;
     let firstname = data.completionData.user.givenName;
     let surnname = data.completionData.user.surname;
-    User.findOne({ personalNumber: personalNumber }, (error: Error, user) => {
-      if (error) {
+    User.findOne({ personalNumber: personalNumber }, (error: Error, user:IUser) => {
+      if (error || !user) {
         const user = new User({
           firstname: firstname,
           surname: surnname,
           personalNumber: personalNumber
         });
-        user.save((error: Error, user: IUser) => {
+        user.save().then((user: IUser) => {
+          console.log(user);
           response.json({
             status: data.status,
             completionData: data.completionData,
