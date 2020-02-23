@@ -15,7 +15,7 @@ Permises owners can put out their premises where they describe what can be done 
 - Joachim Sjövall
 - Asfand Malik
 
-### Presentation
+### Pitch
 
 - Joachim Sjövall
 - Jamal Saeed
