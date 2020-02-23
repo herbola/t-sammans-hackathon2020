@@ -39,13 +39,16 @@ The full project is using MEAN stack:
 - Frontend Web Application Framework (Angular)
 - Backend logic with typescript (Node.js)
 
-Log in with Mobile Bank Id
+Log in with Mobile Bank Id:
+--- 
 ![ab586f8228c224456a571937d5eb9ec7](https://user-images.githubusercontent.com/43444902/75108340-22719500-5621-11ea-9ed5-d7333f0bdf5a.gif)
 
-Create event and find events and see who participates within it
+Create event and find events and see who participates within it:
+---
 ![e295d731f6eb69040b106f4ee4623250](https://user-images.githubusercontent.com/43444902/75109242-e5f26900-5621-11ea-97b0-a206cedc74eb.gif)
 
-Join event and add it to profile
+Join event and add it to profile:
+---
 ![a72f91e4ae997df6605b937e5f71f4c7](https://user-images.githubusercontent.com/43444902/75109329-513c3b00-5622-11ea-82c8-8266cdf801f4.gif)
 
 ### Pictures
