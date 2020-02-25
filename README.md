@@ -5,7 +5,7 @@
 
 ### Concept
 
-Permises owners can put out their premises where they describe what can be done in them (football, badminton etc..), Users can download choose between the different activities that can be done within the premises, other users can then join this activity. The venue of the premises can have a fixed price, where the one who created the ad/activity can specify how many people must participate in the activity as well as how many who are allowed to participate at most, who of course must not exceed the ownership of the premises rules. This means that people that joins the event can split the final sum of the premises, the smallest price will be the total price of the premises/ maximum user, and the most it can cost is the price of the premises/ minimum users! People identify themselves with Swedish Mobilt Bank ID to make it safe. The activities doesnt have to be on premises, the activities can also be somewhere in the nature or other public spaces. The application is supposed to bring people of any kind together which has simular interest. 
+Premises owners can announce their premises where they describe what can be done in them (football, badminton etc..). Users can choose between the different activities that can be done within the premises, choose one of this activities and after that other users can apply for this activity/event. The venue of the premises should have a fixed price, where the one who created the activity/event can specify how many people must participate in the activity as well as how many who are allowed to participate at most, who of course must not exceed the ownership of the premises rules. This means that people that applies for an event can split the final sum of the premises, the smallest price will be the total price of the premises / maximum user, and the highest cost will be the (premises)/ (minimum users)! People identify themselves with Swedish "Mobilt Bank ID" in order to solve the security and safe aspect. The activities doesn't have to be on premises, the activities can also be somewhere in the nature or other public spaces. The application is supposed to bring people of any kind together that similar interests. 
 
 ### Contributors
 
@@ -28,11 +28,11 @@ Permises owners can put out their premises where they describe what can be done 
 ### Product
 
 - Herman Jansson
-  The development took place within 21 hours and this is what it can do so far:
 
-The application so far has support for Swedish Mobile Bank ID to login and identify a profile, creating events, finding events, adding events to its profile, removing events from profile, see whos participates within an event.
+The development took place within less than 24 hours and this is what it can do so far:
+Support for Swedish Mobile Bank ID to login and identify a profile, creating events, finding events, adding events to its profile, removing events from profile, see whos participates within an event.
 
-The full project is using MEAN stack:
+The project is using MEAN stack:
 
 - Database (MongoDB)
 - Backend Web Application framework (Expres.js)
@@ -81,18 +81,4 @@ you would have to generate keys in /server/security like following
 
 `openssl genrsa -out key.pem; openssl req -new -key key.pem -out csr.pem; openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem; rm csr.pem;`
 
----
 
-`npm run backend`
-will start the server
-
----
-
-`backend-https`
-will start the server in https mode
-
-`tns device android --available-devices`
-
-`tns run android --device <Device ID>` Phone
-
-`tns run android` Emulator
